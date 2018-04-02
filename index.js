@@ -11,6 +11,7 @@ class SuperGrid extends Component {
     this.onLayout = this.onLayout.bind(this);
     this.getDimensions = this.getDimensions.bind(this);
     this.state = this.getDimensions();
+    this.flatlist = null;
   }
 
   componentWillReceiveProps(nextProps) {
@@ -163,6 +164,7 @@ class SuperGrid extends Component {
         onLayout={this.onLayout}
         {...props}
         horizontal={horizontal}
+        ref={(ref) => this.flatlist = ref}
       />
     );
   }
